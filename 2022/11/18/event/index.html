@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Redefine">
     <meta name="description" content="Hexo Theme Redefine">
     <meta name="author" content="The Redefine Team">
-
+    
     <title>
-
-        事件委托 |
-
-        Event
+        
+            事件委托 |
+        
+        Theme Redefine
     </title>
-
-    <link rel="stylesheet" href="/css/style.css">
+    
+<link rel="stylesheet" href="/css/style.css">
 
     <link rel="shortcut icon" href="/images/logo.svg">
-
-    <link rel="stylesheet" href="/css/fontawesome.min.css">
+    
+<link rel="stylesheet" href="/css/fontawesome.min.css">
 
     <link href="/css/fontawesome.min.css" rel="stylesheet" type="text/css">
     <link href="/css/regular.min.css" rel="stylesheet" type="text/css">
@@ -27,470 +26,443 @@
     <link href="/css/duotone.min.css" rel="stylesheet" type="text/css">
     <link href="/css/brands.min.css" rel="stylesheet" type="text/css">
     <link href="/css/solid.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="//evan.beee.top/css/waline.css" />
+    <link rel="stylesheet" href="//evan.beee.top/css/waline.css"/>
     <script src="//evan.beee.top/js/waline.js"></script>
     <link href='/css/css2.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script id="hexo-configurations">
-        let REDEFINE = window.REDEFINE || {};
-        REDEFINE.hexo_config = { "hostname": "example.com", "root": "/", "language": "en" };
-        REDEFINE.theme_config = { "toc": { "enable": true, "number": false, "expand_all": true, "init_open": true }, "style": { "primary_color": "#005080", "avatar": "/images/avatar.svg", "favicon": "/images/logo.svg", "article_img_align": "center", "left_side_width": "240px", "content_max_width": "960px", "nav_color": { "left": "#f78736", "right": "#367df7", "transparency": 35 }, "hover": { "shadow": true, "scale": false }, "first_screen": { "enable": true, "background_img": "/images/wallheaven-bg.webp", "description": "Theme Redefine" }, "scroll": { "progress_bar": { "enable": true }, "percent": { "enable": false } } }, "local_search": { "enable": false, "preload": true }, "code_copy": { "enable": true }, "pjax": { "enable": true }, "lazyload": { "enable": true }, "version": "0.3.2" };
-        REDEFINE.language_ago = { "second": "%s seconds ago", "minute": "%s minutes ago", "hour": "%s hours ago", "day": "%s days ago", "week": "%s weeks ago", "month": "%s months ago", "year": "%s years ago" };
-    </script>
-    <meta name="generator" content="Hexo 6.3.0">
-</head>
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"240px","content_max_width":"960px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/wallheaven-bg.webp","description":"Theme Redefine"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_copy":{"enable":true},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.3.2"};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
-    <div class="progress-bar-container">
-
+<div class="progress-bar-container">
+    
         <span class="scroll-progress-bar"></span>
+    
 
-
-
+    
         <span class="pjax-progress-bar"></span>
         <span class="pjax-progress-icon">
             <i class="fas fa-circle-notch fa-spin"></i>
         </span>
+    
+</div>
 
-    </div>
 
+<main class="page-container">
 
-    <main class="page-container">
+    
 
+    <div class="page-main-content">
 
-
-        <div class="page-main-content">
-
-            <div class="page-main-content-top">
-                <header class="header-wrapper">
-
-                    <div class="header-content">
-                        <div class="left">
-
-                            <a class="logo-title" href="/">
-                                Homepage
-                            </a>
-                        </div>
-
-                        <div class="right">
-                            <div class="pc">
-                                <ul class="menu-list">
-
-                                    <li class="menu-item">
-                                        <a class="" href="/">
-                                            HOME
-                                        </a>
-                                    </li>
-
-                                    <li class="menu-item">
-                                        <a class="" href="/archives">
-                                            ARCHIVES
-                                        </a>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                            <div class="mobile">
-
-                                <div class="icon-item menu-bar">
-                                    <div class="menu-bar-middle"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="header-drawer">
-                        <ul class="drawer-menu-list">
-
-                            <li class="drawer-menu-item flex-center">
-                                <a class="" href="/">HOME</a>
-                            </li>
-
-                            <li class="drawer-menu-item flex-center">
-                                <a class="" href="/archives">ARCHIVES</a>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                    <div class="window-mask"></div>
-
-                </header>
-
-
-            </div>
-
-            <div class="page-main-content-middle">
-
-                <div class="main-content">
-
-
-                    <div class="fade-in-down-animation">
-                        <div class="article-content-container">
-
-                            <div class="article-title">
-                                <span class="title-hover-animation">
-                                    <h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">事件委托</h1>
-                                </span>
-                            </div>
-
-
-                            <div class="article-header">
-                                <div class="avatar">
-                                    <img src="/images/avatar.svg">
-                                </div>
-                                <div class="info">
-                                    <div class="author">
-                                        <span class="name">ChipsYang</span>
-
-                                        <span class="author-label">lol</span>
-
-                                    </div>
-                                    <div class="meta-info">
-                                        <div class="article-meta-info">
-                                            <span class="article-date article-meta-item">
-                                                <i class="fa-duotone fa-pen-line"></i>&nbsp;
-                                                <span class="pc">2022-11-18 22:54:04</span>
-                                                <span class="mobile">2022-11-18 22:54</span>
-                                            </span>
-
-
-                                            <span class="article-pv article-meta-item">
-                                                <i class="fas fa-eye"></i>&nbsp;<span
-                                                    id="busuanzi_value_page_pv"></span>
-                                            </span>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="article-content markdown-body">
-                                <h1 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h1>
-                                <p><strong>一、什么是事件委托</strong></p>
-                                <p>提到事件委托，我们必须先了解事件流中的事件捕获和事件冒泡。</p>
-                                <p><strong>事件捕获</strong>就是从DOM的根元素开始去执行对应的事件，执行过程是从外到里。</p>
-                                <p><strong>事件冒泡</strong>就是从文档树中最深的节点开始触发，然后向上传播至没有那么具体的文档，执行过程是从里到外。</p>
-                                <div class="highlight-container" data-rel="Js">
-                                    <figure class="iseeu highlight js">
-                                        <table>
-                                            <tr>
-                                                <td class="gutter">
-                                                    <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre>
-                                                </td>
-                                                <td class="code">
-                                                    <pre><span class="line">   &lt;ul&gt;</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>first child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;li&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> body = <span class="variable language_">document</span>.<span class="property">body</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       li.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是子元素&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是父元素&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       body.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是body&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是document&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </figure>
-                                </div>
-
-                                <p>效果如下：</p>
-                                <p><img lazyload src="/images/loading.svg" data-src="/./img/weituo.gif" alt="weituo">
-                                </p>
-                                <p>当我点击子元素的时候，就触发了事件冒泡机制，从 li 开始触发到 ul 再到 body 最后到 document</p>
-                                <p>而<strong>事件委托</strong>就是利用<strong>事件冒泡</strong>，把原本要绑定在子元素的响应事件委托给父元素，通过父元素监听子元素。</p>
-                                <p><strong>二、使用场景</strong></p>
-                                <p>当我们要给n个按钮添加点击事件时，最笨的方法就是给每个按钮都添加，此方法耗时且麻烦。但是如果委托给父元素，让父元素担当事件监听的职务，则通过事件冒泡就可以获取到所有子元素。
-                                </p>
-                                <div class="highlight-container" data-rel="Js">
-                                    <figure class="iseeu highlight js">
-                                        <table>
-                                            <tr>
-                                                <td class="gutter">
-                                                    <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre>
-                                                </td>
-                                                <td class="code">
-                                                    <pre><span class="line">&lt;ul&gt;</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>first child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>secend child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>third child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>forth child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>fifth child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="comment">// 点击每个小li 被点击的li消失</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="comment">// 1. 获得父元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="comment">// 2. 利用事件委托，将点击事件委托给父元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="comment">// e.target: 判断点的是哪一个元素（标签）</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="comment">// tagName: 标签名字</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="comment">// 3. 找到触发的元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;LI&#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">               e.<span class="property">target</span>.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </figure>
-                                </div>
-
-                                <p>效果如下：</p>
-                                <p><img lazyload src="/images/loading.svg" data-src="/./img/child.gif" alt="child"></p>
-                                <p>其中，e.target 是事件源，获取 e.target 以查看事件实际发生的位置并进行处理；tagName 是标签名字，注意必须得大写。</p>
-                                <p><strong>三、优点</strong></p>
-                                <ol>
-                                    <li>减少事件注册的次数，节省内存占用，提高程序的性能</li>
-                                    <li>新增子对象时也无需再次对其绑定</li>
-                                </ol>
-
-                            </div>
-
-
-                            <div class="post-copyright-info">
-                                <div class="article-copyright-info-container">
-                                    <ul>
-                                        <li>Post title：事件委托</li>
-                                        <li>Post author：ChipsYang</li>
-                                        <li>Create time：2022-11-18 22:54:04</li>
-                                        <li>
-                                            Post link：https://redefine.evanluo.top/2022/11/18/event/
-                                        </li>
-                                        <li>
-                                            Copyright Notice：All articles in this blog are licensed under <a
-                                                class="license" target="_blank" rel="noopener"
-                                                href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a>
-                                            unless stating additionally.
-                                        </li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
-
-
-
-
-                            <div class="article-nav">
-
-                                <div class="article-prev">
-                                    <a class="prev" rel="prev" href="/2022/11/18/storage/">
-                                        <span class="left arrow-icon flex-center">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="title flex-center">
-                                            <span class="post-nav-title-item">本地存储</span>
-                                            <span class="post-nav-item">Prev posts</span>
-                                        </span>
-                                    </a>
-                                </div>
-
-
-                                <div class="article-next">
-                                    <a class="next" rel="next" href="/2022/11/18/closure/">
-                                        <span class="title flex-center">
-                                            <span class="post-nav-title-item">详解闭包</span>
-                                            <span class="post-nav-item">Next posts</span>
-                                        </span>
-                                        <span class="right arrow-icon flex-center">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </span>
-                                    </a>
-                                </div>
-
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-            </div>
-
-            <div class="page-main-content-bottom">
-                <footer class="footer">
-                    <div class="info-container">
-                        <div class="copyright-info info-item">
-                            &copy;
-
-                            <span>2020</span>
-                            -
-
-                            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">The Redefine Team</a>
-                        </div>
-
-                        <script async data-pjax
-                            src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-                        <div class="website-count info-item">
-
-                            <span id="busuanzi_container_site_uv">
-                                Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
-                            </span>
-
-
-                            <span id="busuanzi_container_site_pv">
-                                Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                            </span>
-
-                        </div>
-
-                        <div class="theme-info info-item">
-                            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a
-                                class="theme-version" target="_blank"
-                                href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.3.2</a>
-                        </div>
-
-
-                    </div>
-                </footer>
-            </div>
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Theme Redefine
+            </a>
         </div>
 
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">事件委托</h1></span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">The Redefine Team</span>
+                        
+                            <span class="author-label">lol</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-duotone fa-pen-line"></i>&nbsp;
+        <span class="pc">2022-11-18 22:54:04</span>
+        <span class="mobile">2022-11-18 22:54</span>
+    </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h1><p><strong>一、什么是事件委托</strong></p>
+<p>提到事件委托，我们必须先了解事件流中的事件捕获和事件冒泡。</p>
+<p><strong>事件捕获</strong>就是从DOM的根元素开始去执行对应的事件，执行过程是从外到里。</p>
+<p><strong>事件冒泡</strong>就是从文档树中最深的节点开始触发，然后向上传播至没有那么具体的文档，执行过程是从里到外。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   &lt;ul&gt;</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>first child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> li = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;li&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> body = <span class="variable language_">document</span>.<span class="property">body</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       li.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是子元素&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是父元素&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       body.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是body&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;我是document&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>效果如下：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/./img/weituo.gif" alt="weituo"></p>
+<p>当我点击子元素的时候，就触发了事件冒泡机制，从 li 开始触发到 ul 再到 body 最后到 document</p>
+<p>而<strong>事件委托</strong>就是利用<strong>事件冒泡</strong>，把原本要绑定在子元素的响应事件委托给父元素，通过父元素监听子元素。</p>
+<p><strong>二、使用场景</strong></p>
+<p>当我们要给n个按钮添加点击事件时，最笨的方法就是给每个按钮都添加，此方法耗时且麻烦。但是如果委托给父元素，让父元素担当事件监听的职务，则通过事件冒泡就可以获取到所有子元素。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>first child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>secend child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>third child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>forth child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">       <span class="language-xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>fifth child<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">   &lt;/ul&gt;</span><br><span class="line">   <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="comment">// 点击每个小li 被点击的li消失</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="comment">// 1. 获得父元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">const</span> ul = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;ul&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	<span class="comment">// 2. 利用事件委托，将点击事件委托给父元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       ul.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="comment">// e.target: 判断点的是哪一个元素（标签）</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="comment">// tagName: 标签名字</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="comment">// 3. 找到触发的元素</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="keyword">if</span> (e.<span class="property">target</span>.<span class="property">tagName</span> === <span class="string">&#x27;LI&#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">               e.<span class="property">target</span>.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+
+<p>效果如下：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/./img/child.gif" alt="child"></p>
+<p>其中，e.target 是事件源，获取 e.target 以查看事件实际发生的位置并进行处理；tagName 是标签名字，注意必须得大写。</p>
+<p><strong>三、优点</strong></p>
+<ol>
+<li>减少事件注册的次数，节省内存占用，提高程序的性能</li>
+<li>新增子对象时也无需再次对其绑定</li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：事件委托</li>
+        <li>Post author：The Redefine Team</li>
+        <li>Create time：2022-11-18 22:54:04</li>
+        <li>
+            Post link：https://redefine.evanluo.top/2022/11/18/event/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/11/18/print/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">打印99乘法表</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/11/18/debounce/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">防抖节流的原理</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">The Redefine Team</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.3.2</a>
+        </div>
+        
+        
+    </div>
+</footer>
+        </div>
+    </div>
+
+    
         <div class="post-tools">
             <div class="post-tools-container">
-                <ul class="tools-list">
-                    <!-- TOC aside toggle -->
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-duotone fa-outdent"></i>
+            </li>
+        
 
-                    <li class="tools-item page-aside-toggle">
-                        <i class="fa-duotone fa-outdent"></i>
-                    </li>
-
-
-                    <!-- go comment -->
-
-                </ul>
-            </div>
-
-        </div>
-
-
-        <div class="right-bottom-side-tools">
-            <div class="side-tools-container">
-                <ul class="side-tools-list">
-                    <li class="tools-item tool-font-adjust-plus flex-center">
-                        <i class="fas fa-search-plus"></i>
-                    </li>
-
-                    <li class="tools-item tool-font-adjust-minus flex-center">
-                        <i class="fas fa-search-minus"></i>
-                    </li>
-
-                    <li class="tools-item tool-expand-width flex-center">
-                        <i class="fas fa-arrows-alt-h"></i>
-                    </li>
-
-                    <li class="tools-item tool-dark-light-toggle flex-center">
-                        <i class="fas fa-moon"></i>
-                    </li>
-
-                    <!-- rss -->
-
-
-
-                    <li class="tools-item tool-scroll-to-top flex-center">
-                        <i class="fas fa-arrow-up"></i>
-                    </li>
-
-
-                    <li class="tools-item tool-scroll-to-bottom flex-center">
-                        <i class="fas fa-arrow-down"></i>
-                    </li>
-                </ul>
-
-                <ul class="exposed-tools-list">
-                    <li class="tools-item tool-toggle-show flex-center">
-                        <i class="fas fa-cog fa-spin"></i>
-                    </li>
-
-                </ul>
-            </div>
+        <!-- go comment -->
+        
+    </ul>
+</div>
 
         </div>
+    
 
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
 
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-                <div class="post-toc">
-                    <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i
-                            class="fa-solid fa-list-tree"></i> <strong>Contents</strong></div>
-                    <ol class="nav">
-                        <li class="nav-item nav-level-1"><a class="nav-link"
-                                href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="nav-text">事件委托</span></a></li>
-                    </ol>
-                </div>
-            </div>
-        </aside>
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
 
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
 
-        <div class="image-viewer-container">
-            <img src="">
-        </div>
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
 
+        <!-- rss -->
+        
 
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
 
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
 
-    </main>
-
-
-
-
-    <script src="/js/utils.js"></script>
-
-    <script src="/js/main.js"></script>
-
-    <script src="/js/header-shrink.js"></script>
-
-    <script src="/js/back2top.js"></script>
-
-    <script src="/js/dark-light-toggle.js"></script>
-
-
-
-
-
-
-    <script src="/js/code-copy.js"></script>
-
-
-
-
-
-    <script src="/js/lazyload.js"></script>
-
-
-
-    <div class="post-scripts pjax">
-
-
-        <script src="/js/left-side-toggle.js"></script>
-
-        <script src="/js/libs/anime.min.js"></script>
-
-        <script src="/js/toc.js"></script>
-
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list-tree"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="nav-text">事件委托</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
 
 
-    <script src="/js/libs/pjax.min.js"></script>
+    
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            window.pjax = new Pjax({
-                selectors: [
-                    'head title',
-                    '.page-container',
-                    '.pjax'
-                ],
-                history: true,
-                debug: false,
-                cacheBust: false,
-                timeout: 0,
-                analytics: false,
-                currentUrlFullReload: false,
-                scrollRestoration: false,
-                // scrollTo: true,
-            });
+</main>
 
-            document.addEventListener('pjax:send', () => {
-                REDEFINE.utils.pjaxProgressBarStart();
-            });
 
-            document.addEventListener('pjax:complete', () => {
-                REDEFINE.utils.pjaxProgressBarEnd();
-                window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-                REDEFINE.refresh();
-            });
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+    
+<script src="/js/lazyload.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
         });
-    </script>
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
 
 
 
 </body>
-
 </html>
