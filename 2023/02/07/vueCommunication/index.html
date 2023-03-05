@@ -9,7 +9,7 @@
     
     <title>
         
-            事件循环(Event Loop) |
+            vue组件之间的通信 |
         
         Chips&#39;s Blog
     </title>
@@ -180,7 +180,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">事件循环(Event Loop)</h1></span>
+            <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">vue组件之间的通信</h1></span>
         </div>
 
         
@@ -199,8 +199,8 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-duotone fa-pen-line"></i>&nbsp;
-        <span class="pc">2023-02-11 20:50:02</span>
-        <span class="mobile">2023-02-11 20:50</span>
+        <span class="pc">2023-02-07 17:01:27</span>
+        <span class="mobile">2023-02-07 17:01</span>
     </span>
     
     
@@ -208,12 +208,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>765 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
         </span>
     
     
@@ -229,42 +229,64 @@
         
 
         <div class="article-content markdown-body">
-            <h1 id="事件循环-Event-Loop"><a href="#事件循环-Event-Loop" class="headerlink" title="事件循环(Event Loop)"></a>事件循环(Event Loop)</h1><h2 id="一、什么是Event-Loop"><a href="#一、什么是Event-Loop" class="headerlink" title="一、什么是Event Loop"></a>一、什么是<strong><strong>Event Loop</strong></strong></h2><p>JavaScript是一门单线程语言，它一个时间只能做一件事；</p>
-<p>在js代码运行的时候，会形成一个执行栈，每调用一个函数，就会把该函数的执行上下文放入执行栈；</p>
-<p>另外还有任务队列存放待完成的任务，在js中，有同步任务和异步任务，异步任务又分为宏任务和微任务；</p>
-<p>因为script代码整体就是一个宏任务，因此事件循环先从一个宏任务开始，当执行完宏任务后，就从微任务队列拿微任务到执行栈中执行，当前微任务队列所有微任务执行完后，就执行宏任务队列的下一个宏任务；</p>
-<p>然后重复这个操作，直到任务队列里的任务执行完，这个过程就叫事件循环。</p>
-<h2 id="二、宏任务和微任务"><a href="#二、宏任务和微任务" class="headerlink" title="二、宏任务和微任务"></a>二、宏任务和微任务</h2><p>JavaScript 的事件分两种，宏任务(macro-task)和微任务(micro-task)。</p>
-<h3 id="1-宏任务"><a href="#1-宏任务" class="headerlink" title="1. 宏任务"></a>1. 宏任务</h3><ul>
-<li><code>script</code></li>
-<li><code>setTimeout</code></li>
-<li><code>setInterval</code></li>
-<li><code>setImmediate</code></li>
+            <h1 id="vue组件之间的通信"><a href="#vue组件之间的通信" class="headerlink" title="vue组件之间的通信"></a>vue组件之间的通信</h1><h2 id="一、组件间通信的概念"><a href="#一、组件间通信的概念" class="headerlink" title="一、组件间通信的概念"></a>一、组件间通信的概念</h2><p>指组件( .vue )通过某种方式来传递信息以达到某个目的。举个例子：我们在使用 UI 框架中的 table 组件，可能会往 table 组件中传入某些数据，这个本质就形成了组件之间的通信。</p>
+<h2 id="二、组件通信的作用"><a href="#二、组件通信的作用" class="headerlink" title="二、组件通信的作用"></a>二、组件通信的作用</h2><p>在vue中，每个组件之间都有独自的作用域，组件间的数据是无法共享的。但实际开发工作中我们常常需要让组件之间共享数据，这也是组件通信的目的要让它们互相之间能进行通讯，这样才能构成一个有机的完整系统。</p>
+<h2 id="三、Vue-组件如何进行传值的"><a href="#三、Vue-组件如何进行传值的" class="headerlink" title="三、Vue 组件如何进行传值的"></a>三、Vue 组件如何进行传值的</h2><h3 id="1-父子组件通信"><a href="#1-父子组件通信" class="headerlink" title="1. 父子组件通信"></a>1. 父子组件通信</h3><p>1.1 父组件向子组件传递数据</p>
+<ul>
+<li>父组件通过 <code>自定义属性名=&quot;需要传递的数据&quot;</code>，子组件通过 <code>props</code> 接收</li>
 </ul>
-<h3 id="2-微任务"><a href="#2-微任务" class="headerlink" title="2. 微任务"></a>2. 微任务</h3><ul>
-<li><code>promise.then()</code> <code>promise.catch()</code> 的回调cb</li>
-<li><code>async await</code></li>
-<li><code>mutationObserver</code> &#x3D;&#x3D;&gt; 监听DOM的改变</li>
-<li><code>process.nextTick()</code> &#x3D;&#x3D;&gt; Node</li>
-</ul>
-<p><strong>关系：</strong>微任务是包含在宏任务里面的，一个宏任务中，可以有多个微任务。</p>
-<h3 id="3-执行顺序"><a href="#3-执行顺序" class="headerlink" title="3. 执行顺序"></a>3. 执行顺序</h3><ul>
-<li>首先script代码块可以看做第一个宏任务，开始第一个Tick事件循环</li>
-<li>会先执行script代码块中的同步代码</li>
-<li>如果遇到宏任务，就放到宏任务队列中等待执行, 如果遇到微任务，放到微任务队列中</li>
-<li>当主线程执行完同步代码的时候，首先，去微任务队列中清空当前事件循环的所有微任务（本轮事件循环Tick结束）</li>
-<li>如果还有异步的宏任务，那么就会进行循环执行上述的操作</li>
-</ul>
-<h2 id="三、来点例子"><a href="#三、来点例子" class="headerlink" title="三、来点例子"></a>三、来点例子</h2><h3 id="eg1："><a href="#eg1：" class="headerlink" title="eg1："></a>eg1：</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="title function_">resolve</span>(<span class="number">5</span>);</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">2</span>);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(val);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">3</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">6</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1  2  4  5  3  6</span></span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Father.vue 组件</span></span><br><span class="line">&lt;<span class="title class_">Children</span> <span class="attr">name</span>:<span class="string">&quot;yang&quot;</span> age=<span class="number">18</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Children.vue 组件</span></span><br><span class="line"><span class="attr">props</span>:&#123;</span><br><span class="line">	<span class="attr">name</span>:<span class="title class_">String</span></span><br><span class="line">	<span class="attr">age</span>:&#123;</span><br><span class="line">		<span class="attr">type</span>:<span class="title class_">Number</span>,</span><br><span class="line">		<span class="attr">defaule</span>:<span class="number">18</span>,</span><br><span class="line">		<span class="attr">require</span>:<span class="literal">true</span> </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
-<p>执行结果为： 1  2  4  5  3  6</p>
-<p><img lazyload src="/images/loading.svg" data-src="/../img/loop.png" alt="loop"></p>
-<h3 id="eg2："><a href="#eg2：" class="headerlink" title="eg2："></a>eg2：</h3><div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">async1</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;async1 start&#x27;</span>)  </span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">async2</span>()      <span class="comment">// await这一行，这个async2 同步执行的; await的下面，放到微任务队列</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;async1 end&#x27;</span>) <span class="comment">// 这一行，相当于放到.then()中  微1 </span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">666</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">async2</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;async2&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;script start&#x27;</span>)  </span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;setTimeout&#x27;</span>) <span class="comment">// 放到宏任务队列中 宏1 </span></span><br><span class="line">&#125;, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">async1</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;promise1&#x27;</span>)</span><br><span class="line">    <span class="title function_">resolve</span>();</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;promise2&#x27;</span>)  <span class="comment">// 微任务  微2 </span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;script end&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// script start </span></span><br><span class="line"><span class="comment">// async1 start</span></span><br><span class="line"><span class="comment">// async2</span></span><br><span class="line"><span class="comment">// promise1</span></span><br><span class="line"><span class="comment">// script end</span></span><br><span class="line"><span class="comment">// async1 end</span></span><br><span class="line"><span class="comment">// 666</span></span><br><span class="line"><span class="comment">// promise2  (本轮tick结束)</span></span><br><span class="line"><span class="comment">// setTimeout</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>父组件通过 <code>v-model</code> 传递需要的参数，子组件 <code>props</code> 中通过 <code>value</code> 接收（适用于基本数据类型）</li>
+<li>父组件通过 <code>自定义属性名.sync=&quot;需要传递的数据&quot;</code>，子组件通过 <code>props</code> 接收（适用于基本数据类型）</li>
+</ul>
+<p>1.2 子组件向父组件传递数据</p>
+<ul>
+<li>子组件通过 <code>$emit(&#39;自定义事件名&#39;， 传递的参数)</code>，父组件 <code>@自定义事件名=&quot;绑定的自定义方法($event)&quot;</code></li>
+</ul>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Father.vue 组件</span></span><br><span class="line">&lt;<span class="title class_">Children</span> @add=<span class="string">&quot;numAdd($event)&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Children.vue 组件</span></span><br><span class="line"><span class="variable language_">this</span>.$emit(<span class="string">&#x27;add&#x27;</span>, <span class="number">12</span>)</span><br></pre></td></tr></table></figure></div>
 
-<p>执行结果为：</p>
-<p>![loop1](..&#x2F;img&#x2F;loop 1.png)</p>
-<p>![loop2](..&#x2F;img&#x2F;loop 2.png)</p>
-<p>在本轮事件循环中的微任务比下一次的事件循环中的宏任务优先级高，也就是我们要将这轮的微任务都执行完毕，才能去执行下一个宏任务。</p>
+<ul>
+<li>子组件可直接通过 <code>$emit(&#39;input&#39;， 需要改变的值)</code>（适用于基本数据类型）</li>
+<li>子组件可直接通过 <code>$emit(&#39;update:自定义属性名&#39;， 需要改变的值)</code>（适用于基本数据类型）</li>
+</ul>
+<p>1.3 其他方法</p>
+<ul>
+<li>ref &#x2F; $refs：<br>父组件通过 <code>$refs</code> 可直接调用子组件的数据和方法<br>可读不可改</li>
+</ul>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Father.vue 组件</span></span><br><span class="line">&lt;<span class="title class_">Children</span> ref=<span class="string">&quot;foo&quot;</span> /&gt;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$refs</span>.<span class="property">foo</span></span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>$parent &#x2F; $children：<br>使用 <code>$parent</code> 访问父组件实例，<code>$children</code> 访问子组件实例<br><strong>注意：</strong>$children拿到的是所有组件的实例，是一个数组，且是无序的</li>
+</ul>
+<p>1.4 适用于父子传参 及 祖先后代传参</p>
+<ul>
+<li>依赖注入 - provide&#x2F;inject：<br>父组件使用 <code>provide</code> 来传参，所有子组件都可以获取到，需要参数的子组件通过 <code>inject</code> 来接收（可读不可改）</li>
+</ul>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 祖先组件</span></span><br><span class="line"><span class="title function_">provide</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		<span class="attr">foo</span>:<span class="string">&#x27;foo&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 后代组件</span></span><br><span class="line"><span class="attr">inject</span>:[<span class="string">&#x27;foo&#x27;</span>]</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>$attrs 和 $listeners（可以批量传数据或方法）<br> <code>$attrs</code> 不包括 <code>props</code> 传递的属性，<code>$listeners</code> 包括了所有作用在这个组件上的监听器</li>
+</ul>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Father.vue 组件</span></span><br><span class="line">&lt;<span class="title class_">Child</span> name=<span class="string">&quot;yang&quot;</span> @test=<span class="string">&quot;test&quot;</span>&gt;&lt;/<span class="title class_">Child</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Child.vue 组件</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Grandson</span> <span class="attr">v-bind</span>=<span class="string">&quot;$attrs&quot;</span> <span class="attr">v-on</span>=<span class="string">&quot;$listeners&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">Grandson</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在祖先组件中使用</span></span><br><span class="line"><span class="attr">props</span>:[<span class="string">&#x27;name&#x27;</span>]</span><br><span class="line"><span class="title function_">created</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">this</span>.$emit(<span class="string">&#x27;test&#x27;</span>)</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">$attrs</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="2-兄弟组件通信"><a href="#2-兄弟组件通信" class="headerlink" title="2. 兄弟组件通信"></a>2. 兄弟组件通信</h3><p>eventBus事件总线：<br>创建一个中央事件总线 <code>EventBus</code>，兄弟组件通过 <code>$emit</code> 触发自定义事件，<code>$emit</code> 第二个参数为传递的数 值，另一个兄弟组件通过 <code>$on</code> 监听自定义事件</p>
+<h3 id="3-无直接关系组件通信"><a href="#3-无直接关系组件通信" class="headerlink" title="3. 无直接关系组件通信"></a>3. 无直接关系组件通信</h3><p>Vuex</p>
+<p>vuex相当于一个存储共享变量的容器</p>
+<ul>
+<li>state：存放共享变量</li>
+<li>mutations：存放修改state的方法</li>
+<li>actions：存放异步方法，在mutations的基础上进行</li>
+<li>getters：相当于计算属性，用来获得共享变量的值</li>
+<li>modules：将项目中的各个模块分开定义和操作</li>
+</ul>
+<h2 id="四、小结"><a href="#四、小结" class="headerlink" title="四、小结"></a>四、小结</h2><ul>
+<li>父子关系的组件数据传递选择 props 与 $emit 进行传递，也可选择 ref</li>
+<li>兄弟关系的组件数据传递可选择 $bus ，其次可以选择 $parent 进行传递</li>
+<li>祖先与后代组件数据传递可选择 attrs 与 listeners 或者 Provide 与 Inject</li>
+<li>复杂关系的组件数据传递可以通过 vuex 存放共享的变量</li>
+</ul>
 
         </div>
 
@@ -272,11 +294,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：事件循环(Event Loop)</li>
+        <li>Post title：vue组件之间的通信</li>
         <li>Post author：ChipsYang</li>
-        <li>Create time：2023-02-11 20:50:02</li>
+        <li>Create time：2023-02-07 17:01:27</li>
         <li>
-            Post link：https://www.evanluo.top/2023/02/11/Event Loop/
+            Post link：https://www.evanluo.top/2023/02/07/vueCommunication/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -295,13 +317,13 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/02/11/vueInstruct/"
+                           href="/2023/02/11/Event%20Loop/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">vue指令</span>
+                                <span class="post-nav-title-item">事件循环(Event Loop)</span>
                                 <span class="post-nav-item">Prev posts</span>
                             </span>
                         </a>
@@ -311,10 +333,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/02/07/vueCommunication/"
+                           href="/2022/11/14/debounce/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">vue组件之间的通信</span>
+                                <span class="post-nav-title-item">防抖节流的原理</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -448,7 +470,7 @@
             <div class="post-toc-wrap">
     <div class="post-toc">
         <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list-tree"></i> <strong>Contents</strong></div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF-Event-Loop"><span class="nav-text">事件循环(Event Loop)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFEvent-Loop"><span class="nav-text">一、什么是Event Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%92%8C%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="nav-text">二、宏任务和微任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%8F%E4%BB%BB%E5%8A%A1"><span class="nav-text">1. 宏任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%BE%AE%E4%BB%BB%E5%8A%A1"><span class="nav-text">2. 微任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="nav-text">3. 执行顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9D%A5%E7%82%B9%E4%BE%8B%E5%AD%90"><span class="nav-text">三、来点例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#eg1%EF%BC%9A"><span class="nav-text">eg1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#eg2%EF%BC%9A"><span class="nav-text">eg2：</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1"><span class="nav-text">vue组件之间的通信</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-text">一、组件间通信的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">二、组件通信的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Vue-%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E4%BC%A0%E5%80%BC%E7%9A%84"><span class="nav-text">三、Vue 组件如何进行传值的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="nav-text">1. 父子组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="nav-text">2. 兄弟组件通信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%97%A0%E7%9B%B4%E6%8E%A5%E5%85%B3%E7%B3%BB%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1"><span class="nav-text">3. 无直接关系组件通信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%B0%8F%E7%BB%93"><span class="nav-text">四、小结</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
