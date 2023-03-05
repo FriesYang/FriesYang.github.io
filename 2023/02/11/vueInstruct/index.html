@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="ChipsYang">
+    
+    <title>
+        
+            vue指令 |
+        
+        Chips&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/css/fontawesome.min.css">
+    <link href="/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/regular.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/v5-font-face.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/duotone.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/brands.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/solid.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//evan.beee.top/css/waline.css"/>
+    <script src="//evan.beee.top/js/waline.js"></script>
+    <link href='/css/css2.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"240px","content_max_width":"960px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_img":"/images/wallheaven-bg.webp","description":"Chips's Blog"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"0.3.2"};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+    
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Chips&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://github.com/FriesYang/FriesYang.github.io"
+                            >
+                                GITHUB
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               target="_blank" rel="noopener" href="https://juejin.cn/user/3734420815622158/posts"
+                            >
+                                掘金
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://github.com/FriesYang/FriesYang.github.io">GITHUB</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       target="_blank" rel="noopener" href="https://juejin.cn/user/3734420815622158/posts">掘金</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">vue指令</h1></span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">ChipsYang</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-duotone fa-pen-line"></i>&nbsp;
+        <span class="pc">2023-02-11 20:50:02</span>
+        <span class="mobile">2023-02-11 20:50</span>
+    </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.9k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="vue指令"><a href="#vue指令" class="headerlink" title="vue指令"></a>vue指令</h1><h2 id="一、v-bind-动态属性"><a href="#一、v-bind-动态属性" class="headerlink" title="一、v-bind 动态属性"></a>一、v-bind 动态属性</h2><ol>
+<li><strong>作用：</strong>给标签属性设置vue变量的值</li>
+<li><strong>语法：</strong><code>v-bind:属性名=&quot;vue变量&quot;</code></li>
+<li><strong>简写：</strong><code>:属性名=&quot;vue变量&quot;</code></li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img v-bind:src=&quot;imgSrc&quot;&gt;</span><br><span class="line">&lt;img :src=&quot;imgSrc&quot;&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>v-bind动态属性作用于图片时尤其需要注意，v-bind 会直接将资源路径认定为字符串，解决方法为：直接在v-bind动态属性后面传递实际的资源。</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">     &lt;img v-bind:src=&quot;imgUrl1&quot; alt=&quot;&quot;&gt;</span><br><span class="line">     &lt;img :src=&quot;imgUrl2&quot; alt=&quot;&quot;&gt;</span><br><span class="line">     &lt;img :src=&quot;imgUrl3&quot; alt=&quot;&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">// 通过import引入资源文件，在data中进行定义，最后再动态属性中使用</span><br><span class="line">import img from &#x27;../assets/gqwytx.jpg&#x27;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#x27;Picture&#x27;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            imgUrl1:&quot;../assets/gqwytx.jpg&quot;,</span><br><span class="line">            imgUrl2: img,</span><br><span class="line">            // require 引入资源文件，直接在动态属性中使用</span><br><span class="line">            // 优势：require引入资源的方式是按需的，这样一来，页面初始更新效率会更高</span><br><span class="line">            imgUrl3: require(&#x27;../assets/gqwytx.jpg&#x27;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="二、v-on-事件绑定"><a href="#二、v-on-事件绑定" class="headerlink" title="二、v-on 事件绑定"></a>二、<strong><strong>v-on 事件绑定</strong></strong></h2><ol>
+<li><strong>作用：</strong>给标签绑定事件</li>
+<li><strong>语法：</strong><ul>
+<li>v-on:事件名&#x3D;”methods中的函数”</li>
+<li>v-on:事件名&#x3D;”methods中的函数(实参)”</li>
+<li>v-on:事件名&#x3D;”少量代码”  <strong>(不推荐)</strong></li>
+</ul>
+</li>
+<li><strong>简写：</strong>@事件名&#x3D;”methods中的函数(实参)”</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">   &lt;button v-on:click=&quot;addFn&quot;&gt;点我+1&lt;/button&gt;              // v-on:事件名=&quot;methods中的函数&quot;</span><br><span class="line">   &lt;button v-on:click=&quot;addCountFn(2)&quot;&gt;点我+2&lt;/button&gt;      // v-on:事件名=&quot;methods中的函数(实参)&quot;</span><br><span class="line">&lt;button v-on:click=&quot;count = count + 1&quot;&gt;点我+1&lt;/button&gt;  // v-on:事件名=&quot;少量代码&quot;    </span><br><span class="line">&lt;button @click=&quot;subFn()&quot;&gt;点我减少1&lt;/button&gt;             // @事件名=&quot;methods中的函数(实参)&quot;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="三、v-on-获取事件对象"><a href="#三、v-on-获取事件对象" class="headerlink" title="三、v-on 获取事件对象"></a>三、v-on 获取事件对象</h2><ol>
+<li><strong>作用：</strong>vue事件处理函数中, 拿到事件对象</li>
+<li><strong>语法：</strong><ul>
+<li>如果没有传参，则通过形参直接接收，在定义方法时默认的事件对象在第一个形参上。</li>
+<li>如果传参，则通过<code>$event</code>指代事件对象传给事件处理函数，使用时，对应实参位置设置新参即可使用。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;a @click=&quot;goUrl&quot; href=&quot;http://www.baidu.com&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">&lt;a @click=&quot;goUrl($event)&quot; href=&quot;http://www.taobao.com&quot;&gt;淘宝&lt;/a&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p><strong>只要在使用方法时打上小括号，就会覆盖原本vue默认设置在第一个形参上的事件对象参数。</strong></p>
+<h2 id="四、v-on-修饰符"><a href="#四、v-on-修饰符" class="headerlink" title="四、v-on 修饰符"></a>四、<strong><strong>v-on 修饰符</strong></strong></h2><ol>
+<li><strong>语法：</strong>@事件名.修饰符&#x3D;”methods里函数”<ul>
+<li>.stop - 阻止事件冒泡</li>
+<li>.prevent - 阻止默认行为</li>
+<li>.once - 程序运行期间, 只触发一次事件处理函数</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div @click=&quot;fatherFn&quot;&gt;</span><br><span class="line">    &lt;button @click.stop=&quot;oneFn&quot;&gt;阻止事件冒泡&lt;/button&gt;</span><br><span class="line">    &lt;a href=&quot;http://www.baidu.com&quot; @click.prevent.stop&gt;去百度&lt;/a&gt;</span><br><span class="line">    &lt;button @click.once=&quot;twoFn&quot;&gt;事件处理函数触发一次&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="五、v-on-按键修饰符"><a href="#五、v-on-按键修饰符" class="headerlink" title="五、v-on 按键修饰符"></a>五、v-on 按键修饰符</h2><ol>
+<li><strong>作用：</strong>给键盘事件, 添加修饰符</li>
+<li><strong>语法：</strong><ul>
+<li>@keyup.enter  -  监测回车按键，按下回车触发绑定</li>
+<li>@keyup.esc - 监测返回按键，按下返回触发绑定</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- .enter-回车 --&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; @keydown.enter=&quot;enterFn&quot;&gt;</span><br><span class="line">&lt;!-- .esc修饰符 - 取消键 --&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; @keyup.esc=&quot;escFn&quot;&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="六、v-model"><a href="#六、v-model" class="headerlink" title="六、v-model"></a>六、v-model</h2><ol>
+<li><p><strong>作用：</strong>把value属性和vue数据变量, 双向绑定到一起</p>
+<pre><code>        **当数据改变时，视图自动同步；当视图改变时，数据自动同步。**
+</code></pre>
+</li>
+<li><p><strong>语法：</strong>v-model&#x3D;”vue数据变量”</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;radio&quot; value=&quot;男&quot; v-model=&quot;sex&quot; /&gt; 男</span><br><span class="line">   &lt;input type=&quot;radio&quot; value=&quot;女&quot; v-model=&quot;sex&quot; /&gt; 女</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="6-1-v-model-的修饰符"><a href="#6-1-v-model-的修饰符" class="headerlink" title="6.1 v-model 的修饰符"></a>6.1 <strong><strong>v-model 的修饰符</strong></strong></h3><ol>
+<li><strong>语法：</strong>v-model.修饰符&#x3D;”vue数据变量”<ul>
+<li>.number - 将输入框中的值以 parseFloat 的形式转化为数字类型 (常用)，会自动清除后续非数字部分，如果第一个字符就不是数字时，.number修饰符就失效了。</li>
+<li>.trim - 去除收尾空格字符 (常用)。</li>
+<li>.lazy - 将 input 输入时触发的实时更新数据操作转移到失焦、回车时触发。</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 转化数字 --&gt;		</span><br><span class="line">&lt;input type=&quot;text&quot; v-model.number=&quot;newNumber&quot; /&gt;</span><br><span class="line">&lt;!-- 取消前后空格 --&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; v-model.trim=&quot;newTrim&quot; /&gt;</span><br><span class="line">&lt;!-- 懒更新 --&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; v-model.lazy=&quot;newLazy&quot; /&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="七、v-text-和-v-html"><a href="#七、v-text-和-v-html" class="headerlink" title="七、v-text 和 v-html"></a>七、<strong><strong>v-text 和 v-html</strong></strong></h2><ol>
+<li><strong>作用：</strong>更新DOM对象的 innerText &#x2F; innerHTML</li>
+<li><strong>语法：</strong><ul>
+<li>v-text&#x3D;”vue数据变量”</li>
+<li>v-html&#x3D;”vue数据变量”</li>
+</ul>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-text=&quot;str&quot;&gt;&lt;/p&gt;</span><br><span class="line">   &lt;p v-html=&quot;str&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></div>
+
+<p>v-text 使用时不允许当前标签内有任何子元素，因为本来当前元素中的内容就会被v-text中的内容覆盖，所以当前标签中的子元素显得毫无意义甚至影响页面的渲染效率。</p>
+<h2 id="八、v-show-和-v-if"><a href="#八、v-show-和-v-if" class="headerlink" title="八、v-show 和 v-if"></a>八、<strong><strong>v-show 和 v-if</strong></strong></h2><ol>
+<li><p><strong>作用：</strong>控制标签的显示和隐藏</p>
+</li>
+<li><p><strong>语法：</strong></p>
+<ul>
+<li><p>v-show&#x3D;”vue变量” - 给当前标签设置一个display: none; 来进行隐藏操</p>
+<p>  作，原来的这个标签元素还存在于dom数中。</p>
+</li>
+<li><p>v-if&#x3D;”vue变量” - 直接将需要隐藏的元素从dom树中删除。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>使用场景：</strong>选择v-show和v-if的直接条件：如果当前元素及内部子元素全是静态</p>
+<pre><code>                数据，那么使用v-show，除此以外全用v-if。
+</code></pre>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">&quot;flag1&quot;</span>&gt;</span>v-show<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;flag1&quot;</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;flag2 === 0&quot;</span>&gt;</span>显示为0<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;flag2 === 1&quot;</span>&gt;</span>显示为1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span>显示为其他<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line">		</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           <span class="attr">name</span>: <span class="string">&quot;Display&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">               <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">               <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                   <span class="attr">flag1</span>: <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                   <span class="attr">msg</span>: <span class="string">&quot;动态&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                   <span class="attr">flag2</span>: <span class="number">3</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">               &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">           &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">       &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="九、v-for"><a href="#九、v-for" class="headerlink" title="九、v-for"></a>九、<strong><strong>v-for</strong></strong></h2><ol>
+<li><strong>作用：</strong>渲染列表数据时，直接在标签结构中进行数组遍历</li>
+<li><strong>语法：</strong><ul>
+<li>v-for&#x3D;”(值, 索引) in 目标结构”</li>
+<li>v-for&#x3D;”值 in 目标结构”</li>
+</ul>
+</li>
+<li><strong>目标结构：</strong>数组 &#x2F; 对象 &#x2F; 数字 &#x2F; 字符串 (可遍历结构)</li>
+</ol>
+<div class="highlight-container" data-rel="Jsx"><figure class="iseeu highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>		</span></span><br><span class="line"><span class="language-xml">		<span class="comment">&lt;!-- 1. 循环简单数组 --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;(value, index) in arr&quot;</span> <span class="attr">:key</span> =<span class="string">&quot;index&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;&#123; value &#125;&#125; ----- &#123;&#123; index &#125;&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 2. 循环复杂数组 =&gt; 数组对象 --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;value in arr2&quot;</span> <span class="attr">:key</span> =<span class="string">&quot;value.id&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;&#123; value.name &#125;&#125; ----- &#123;&#123; value.age &#125;&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 3. 循环对象 =&gt; 循环的就是对象的属性名和属性值</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">        参数1：属性值</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">        参数2：属性名</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;(value, key) in obj&quot;</span> <span class="attr">:key</span> =<span class="string">&quot;key&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;&#123; value &#125;&#125; ----- &#123;&#123; key &#125;&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 4. 循环数字</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">        参数1： 从1开始计数到最后的自然数</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">        参数2： 下标索引从0开始计数</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;(value, index) in 10&quot;</span> <span class="attr">:key</span> =<span class="string">&quot;index&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;&#123; value &#125;&#125; ----- &#123;&#123; index &#125;&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="comment">&lt;!-- 5. 循环字符串</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">        参数1：字符串的每一个字符</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">        参数2：字符串所在的下标索引，从0开始计数</span></span></span><br><span class="line"><span class="comment"><span class="language-xml">    --&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;(value, index) in abcdefg&quot;</span> <span class="attr">:key</span> =<span class="string">&quot;index&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            &#123;&#123; value &#125;&#125; ----- &#123;&#123; index &#125;&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="attr">name</span>: <span class="string">&quot;Circulation&quot;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">return</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">arr</span>: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">arr2</span>: [</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123; <span class="attr">name</span>: <span class="string">&#x27;Lisa&#x27;</span>, <span class="attr">age</span>: <span class="number">7</span>, <span class="attr">id</span>: <span class="number">1</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#123; <span class="attr">name</span>: <span class="string">&#x27;Betty&#x27;</span>, <span class="attr">age</span>: <span class="number">21</span>, <span class="attr">id</span>: <span class="number">2</span>&#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      ],</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="attr">obj</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">name</span>: <span class="string">&#x27;Betty&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">age</span>: <span class="number">21</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="attr">sex</span>: <span class="string">&#x27;female&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：vue指令</li>
+        <li>Post author：ChipsYang</li>
+        <li>Create time：2023-02-11 20:50:02</li>
+        <li>
+            Post link：https://www.evanluo.top/2023/02/11/vueInstruct/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/02/11/Event%20Loop/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">事件循环(Event Loop)</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">ChipsYang</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v0.3.2</a>
+        </div>
+        
+        
+    </div>
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-duotone fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                <i class="fa-solid fa-rss"></i>
+                </a>
+            </li>
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list-tree"></i> <strong>Contents</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue%E6%8C%87%E4%BB%A4"><span class="nav-text">vue指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81v-bind-%E5%8A%A8%E6%80%81%E5%B1%9E%E6%80%A7"><span class="nav-text">一、v-bind 动态属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81v-on-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="nav-text">二、v-on 事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81v-on-%E8%8E%B7%E5%8F%96%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="nav-text">三、v-on 获取事件对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81v-on-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">四、v-on 修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81v-on-%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">五、v-on 按键修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81v-model"><span class="nav-text">六、v-model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-v-model-%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-text">6.1 v-model 的修饰符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81v-text-%E5%92%8C-v-html"><span class="nav-text">七、v-text 和 v-html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81v-show-%E5%92%8C-v-if"><span class="nav-text">八、v-show 和 v-if</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81v-for"><span class="nav-text">九、v-for</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/utils.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/main.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/header-shrink.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/back2top.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/code-copy.js"></script>
+
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/left-side-toggle.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/libs/anime.min.js"></script><script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//evan.beee.top/projects/hexo-theme-redefine/v0.3.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
