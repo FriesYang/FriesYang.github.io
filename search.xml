@@ -445,7 +445,7 @@
   </entry>
   <entry>
     <title>vue组件之间的通信</title>
-    <url>/2023/02/07/vueCommunication/</url>
+    <url>/2023/03/05/vueCommunication/</url>
     <content><![CDATA[<h1 id="vue组件之间的通信"><a href="#vue组件之间的通信" class="headerlink" title="vue组件之间的通信"></a>vue组件之间的通信</h1><h2 id="一、组件间通信的概念"><a href="#一、组件间通信的概念" class="headerlink" title="一、组件间通信的概念"></a>一、组件间通信的概念</h2><p>指组件( .vue )通过某种方式来传递信息以达到某个目的。举个例子：我们在使用 UI 框架中的 table 组件，可能会往 table 组件中传入某些数据，这个本质就形成了组件之间的通信。</p>
 <h2 id="二、组件通信的作用"><a href="#二、组件通信的作用" class="headerlink" title="二、组件通信的作用"></a>二、组件通信的作用</h2><p>在vue中，每个组件之间都有独自的作用域，组件间的数据是无法共享的。但实际开发工作中我们常常需要让组件之间共享数据，这也是组件通信的目的要让它们互相之间能进行通讯，这样才能构成一个有机的完整系统。</p>
 <h2 id="三、Vue-组件如何进行传值的"><a href="#三、Vue-组件如何进行传值的" class="headerlink" title="三、Vue 组件如何进行传值的"></a>三、Vue 组件如何进行传值的</h2><h3 id="1-父子组件通信"><a href="#1-父子组件通信" class="headerlink" title="1. 父子组件通信"></a>1. 父子组件通信</h3><p>1.1 父组件向子组件传递数据</p>
